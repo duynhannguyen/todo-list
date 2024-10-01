@@ -12,6 +12,7 @@ body {
   color: white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
+  padding: 5rem;
 }
 
 header {
@@ -112,6 +113,9 @@ select {
   position: relative;
   overflow: hidden;
 }
+.todo-input {
+  min-width: 50%;
+}
 
 .select::after {
   content: "\25BC";
@@ -132,4 +136,31 @@ select {
   width: 10rem;
   cursor: pointer;
   padding: 1rem;
+}
+@media (max-width: 648px) {
+  .todo-input {
+    max-width: 10%;
+    font-size: 1rem;
+  }
+  .todo {
+    font-size: 1rem;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 0.5rem;
+  }
+  body {
+    padding: 2rem;
+  }
+  form button {
+    font-size: 1rem;
+  }
+  select {
+    width: 5rem;
+    padding: 0.5rem;
+  }
+  .select::after {
+    content: "";
+    padding: 0;
+  }
 }
