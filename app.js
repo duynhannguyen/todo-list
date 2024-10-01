@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", getTodosFromLocalStorage);
 function addTodo(e) {
   e.preventDefault();
   const todoListFromlocal = JSON.parse(localStorage.getItem("todos"));
-  const existingTodo = todoListFromlocal.find(function (todo) {
-    return todo.text === todoInput.value;
-  });
-  if (existingTodo) {
-    alert("You already has this task");
-    return;
+  if (todoListFromlocal !== null) {
+    const existingTodo = todoListFromlocal.find(function (todo) {
+      return todo.text === todoInput.value;
+    });
+    if (existingTodo) {
+      alert("You already has this task");
+      return;
+    }
   }
   if (todoInput.value === "") return;
 
